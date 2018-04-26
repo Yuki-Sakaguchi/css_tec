@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg line</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+    <style>
+      .f-playfair {
+        font-family: 'Playfair Display', serif;
+      }
+
+      .f-pacifico {
+        font-family: 'Pacifico', cursive;
+      }
+      
+      .f-dancingscript {
+        font-family: 'Dancing Script', cursive;
+      }
+
+      .f-spirax {
+        font-family: 'Spirax', cursive;
+      }
+
+      svg {
+        display: block;
+      }
+
+      text {
+        stroke: black; /* 線の色 */
+        fill: black; /* 塗りつぶし */
+        font-size: 70px; /* 文字は大きめの方がアニメーションが綺麗 */
+        stroke-dasharray: 150% 150%; /* 100%だと最後まで表示されないので多めに設定 */
+        stroke-width: 0.5px; /* 線の太さ */
+        animation: stroke-anim 3s linear; /* アニメーション */
+      }
+
+      @keyframes stroke-anim {
+        0% {
+          stroke-dashoffset: 150%;
+          fill: transparent;
+        }
+        90% {
+          fill: transparent;
+        }
+        100% {
+          stroke-dashoffset: 0%;
+          fill: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <text class="f-playfair" x="0" y="50%">Hello</text>
+    </svg>
+    <svg>
+      <text class="f-pacifico" x="0" y="50%">Hello</text>
+    </svg>
+    <svg>
+      <text class="f-dancingscript" x="0" y="50%">Hello</text>
+    </svg>
+    <svg>
+      <text class="f-spirax" x="0" y="50%">Hello</text>
+    </svg>
+  </body>
+</html>
